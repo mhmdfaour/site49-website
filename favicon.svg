@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#c9f563"/><path d="m18 21-11 11 11 11m28-22 11 11-11 11M37 16 27 48" fill="none" stroke="#142126" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="42 395 390 390">
+<defs><linearGradient id="f" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b5ef0"/><stop offset="1" stop-color="#8ea2fb"/></linearGradient></defs>
+<g transform="translate(66 440) rotate(-3.2) skewX(4)">
+<rect width="340" height="272" rx="48" fill="#0b63f0"/>
+<circle cx="45" cy="36" r="13" fill="#fb4e4b"/><circle cx="89" cy="34" r="13" fill="#fecf24"/><circle cx="133" cy="32" r="13" fill="#56cb46"/>
+<rect x="14" y="62" width="312" height="194" rx="20" fill="#fff"/>
+<rect x="30" y="80" width="116" height="92" rx="14" fill="url(#f)"/>
+<path d="M30 158l36-38 30 32 18-18 32 32v-0 6a14 14 0 0 1-14 14H44a14 14 0 0 1-14-14z" fill="#a9b6fb"/>
+<circle cx="118" cy="104" r="12" fill="#fff"/>
+<g stroke="#b6bdd8" stroke-width="15" stroke-linecap="round"><path d="M178 94h118M178 124h112M178 154h90M32 205h130"/></g>
+</g>
+<g fill="none" stroke="#0057e7" stroke-width="9" stroke-linecap="round"><path d="M262 642l14 11M298 625l4 17M330 640l-13 12"/></g>
+<path d="M291 646l62 44-22 5 27 40-17 11-27-40-14 17z" fill="#0b2048" stroke="#fff" stroke-width="9" stroke-linejoin="round" paint-order="stroke"/>
+</svg>
