@@ -1,0 +1,1 @@
+document.querySelectorAll('[data-demo-contact]').forEach(button=>{button.addEventListener('click',()=>{const dialog=document.getElementById('demo-dialog');if(dialog&&typeof dialog.showModal==='function')dialog.showModal();else document.getElementById('contact-note').scrollIntoView();});});
