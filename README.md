@@ -18,8 +18,8 @@ Then open http://localhost:8080/. (Opening files directly also works; the canoni
 | --- | --- |
 | `index.html`, `portfolio.html`, `about.html`, `contact.html` | Site49's four pages |
 | `assets/site.css` | All styling (colour tokens at the top of the file) |
-| `assets/images/` | Web-ready WebP hero and sample images (+ 640px variants) |
-| `assets/brand/` | Logo, favicon, `social-card.svg` and its 1200×630 PNG export (`social-card.png`, used for Open Graph) |
+| `assets/images/` | Web-ready WebP sample images (+ 640px variants) |
+| `assets/brand/` | Logo (`site49-logo.svg`, plus `site49-logo-light.svg` for dark backgrounds), `favicon.svg`, `social-card.svg` and its 1200×630 PNG export (`social-card.png`, used for Open Graph). Palette: navy `#0b2048`, royal blue `#0057e7`, WhatsApp green `#0b7f31`→`#085f26`, tokens at the top of `assets/site.css` |
 | `demos/` | Three fictional four-page sample sites (`mzansi-morning`, `corner-chair`, `earth-and-form`) and `demos/shared/` (CSS/JS). All are `noindex`, disclosed as fictional, and link back to `portfolio.html` |
 | `sitemap.xml`, `robots.txt` | Four marketing pages only; `/demos/` pages are noindex (not blocked in robots.txt, so crawlers can see the tag) |
 | `favicon.svg`, `favicon.ico` | Root favicon files |
