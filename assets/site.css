@@ -98,8 +98,7 @@ section{padding:64px 0}
 @media(min-width:900px){
  .pages-card{padding:48px 28px 28px}
  .pages{grid-template-columns:repeat(4,1fr);gap:0}
- .pages li:nth-child(even){border-left:0}
- .pages li+li{border-left:1px solid var(--line)}
+ .pages li:nth-child(n+2){border-left:1px solid var(--line)}
 }
 
 .terms{display:grid;gap:0;margin-top:36px}
