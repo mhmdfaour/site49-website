@@ -160,3 +160,7 @@ details p{margin-top:.75rem;color:var(--muted)}
  html{scroll-behavior:auto}
  .hero-art::before,.hero-art figcaption{transform:none}
 }
+
+.legal{max-width:48rem;margin-inline:auto 0}
+.legal h2{margin-top:2rem}
+.legal p{margin-top:.75rem}
