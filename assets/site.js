@@ -89,32 +89,62 @@
       onVideoChange();
     });
   });
-  // Welcome video: muted, looped preview that plays only while on screen (never with sound on its own).
+  // Welcome video: a small silent preview (about 350 KB) loops muted while on screen; never with sound on its own.
+  // The full video with sound loads only when the visitor presses "Play with sound".
   const welcome = document.querySelector('video[data-autoplay]');
+  const pauseBtn = document.querySelector('.vid-pause');
   const saveData = navigator.connection && navigator.connection.saveData;
-  if (welcome && 'IntersectionObserver' in window) {
-    new IntersectionObserver(es => es.forEach(e => {
-      if (e.isIntersecting && motionQ.matches && !saveData && welcome.muted) welcome.play().catch(() => {});
-      else if (!e.isIntersecting && welcome.muted) welcome.pause();
-    }), { threshold: 0.4 }).observe(welcome);
+  let userPaused = false, inView = false;
+  const setPauseBtn = () => {
+    if (!pauseBtn) return;
+    const playing = !welcome.paused;
+    pauseBtn.classList.toggle('is-paused', !playing);
+    pauseBtn.querySelector('.lbl').textContent = playing ? 'Pause preview' : 'Play preview';
+  };
+  if (welcome) {
+    welcome.addEventListener('play', setPauseBtn); welcome.addEventListener('pause', setPauseBtn);
+    if (pauseBtn) {
+      pauseBtn.hidden = false; setPauseBtn();
+      pauseBtn.addEventListener('click', () => {
+        if (welcome.paused) { userPaused = false; welcome.play().catch(() => {}); }
+        else { userPaused = true; welcome.pause(); }
+      });
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(es => es.forEach(e => {
+        inView = e.isIntersecting;
+        if (!welcome.muted) return;
+        if (inView && motionQ.matches && !saveData && !userPaused) welcome.play().catch(() => {});
+        else if (!inView) welcome.pause();
+      }), { threshold: 0.4 }).observe(welcome);
+    }
   }
   document.querySelectorAll('.vid-sound').forEach(b => b.addEventListener('click', () => {
     const v = document.querySelector(`video[data-video="${b.dataset.for}"]`);
+    if (v.dataset.full && !v.dataset.loadedFull) { v.dataset.loadedFull = '1'; v.src = v.dataset.full; }
     v.muted = false; v.loop = false; v.controls = true; v.currentTime = 0;
     const t = v.textTracks && v.textTracks[0]; if (t) t.mode = 'showing';
-    v.play().catch(() => {}); b.hidden = true; v.focus();
+    v.play().catch(() => {}); b.hidden = true; if (pauseBtn && v === welcome) pauseBtn.hidden = true; v.focus();
   }));
+
+  /* ---------- marquee: pause control (choice remembered on this device) ---------- */
+  const marquee = document.querySelector('.marquee');
+  const mBtn = document.querySelector('.marquee-pause');
+  if (marquee && mBtn) {
+    const setM = paused => { marquee.classList.toggle('paused', paused); mBtn.textContent = paused ? 'Play scrolling list' : 'Pause scrolling list'; };
+    setM(store.get('site49-marquee') === 'paused');
+    mBtn.addEventListener('click', () => { const p = !marquee.classList.contains('paused'); setM(p); store.set('site49-marquee', p ? 'paused' : 'playing'); });
+  }
 
   /* ---------- scene sound: off by default, plays only after the visitor turns it on ---------- */
   const btn = document.querySelector('.sound-btn');
   const scenes = [...document.querySelectorAll('[data-sound]')];
   if (!btn) return;
-  const KEY = 'site49-sound';
   const base = btn.dataset.base || 'assets/audio/';
   const tracks = {};
   const visible = new Map();
-  let on = store.get(KEY) === 'on';
-  let unlocked = false;   // browsers only allow sound after a click or key press on this page
+  // Always starts off on every page; only the Sound button turns it on (no auto-resume from a past visit).
+  let on = false;
   let current = null;
 
   function track(name) {
@@ -140,7 +170,7 @@
     return best && ratio > 0.25 ? best.dataset.sound : null;
   }
   function update() {
-    const want = on && unlocked && !videoPlaying ? pick() : null;
+    const want = on && !videoPlaying ? pick() : null;
     if (want !== current) {
       if (current) track(current).target = 0;
       if (want) { const t = track(want); t.target = 0.55; t.a.play().catch(() => {}); }
@@ -153,13 +183,8 @@
     btn.title = on ? 'Turn scene sound off' : 'Turn scene sound on';
   }
   btn.addEventListener('click', () => {
-    on = !on; unlocked = true; store.set(KEY, on ? 'on' : 'off'); render(); update();
+    on = !on; render(); update();
   });
-  if (on) {
-    // Remembered "on": wait for the visitor's first click or key press before any sound starts.
-    const go = () => { unlocked = true; update(); removeEventListener('pointerdown', go); removeEventListener('keydown', go); };
-    addEventListener('pointerdown', go); addEventListener('keydown', go);
-  }
   if ('IntersectionObserver' in window && scenes.length) {
     const ao = new IntersectionObserver(es => { es.forEach(e => visible.set(e.target, e.intersectionRatio)); update(); }, { threshold: [0, .25, .5, .75, 1] });
     scenes.forEach(s => ao.observe(s));

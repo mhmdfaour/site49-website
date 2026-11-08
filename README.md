@@ -42,4 +42,7 @@ Open http://localhost:8080/. (Canonical and Open Graph URLs point at https://sit
 
 ## Publishing
 
+Everything in this repo is served by GitHub Pages, so keep review screenshots out of it (PR images live on the `pr6-screens` branch).
+
+
 GitHub Pages serves `main`; merging to `main` publishes. Don't change `CNAME` or the Pages/DNS settings.

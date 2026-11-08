@@ -420,3 +420,22 @@ em.hl{font-style:normal;background:linear-gradient(100deg,var(--sky),#b9d3ff 60%
  .vcard{scroll-snap-align:start}
  .welcome-grid .phone{max-width:300px}
 }
+
+/* review fixes: pause controls, mobile hero order */
+.vid-pause{position:absolute;top:12px;right:12px;display:inline-flex;align-items:center;gap:.35rem;min-height:40px;padding:.35rem .8rem;border-radius:999px;border:0;background:rgba(6,19,48,.78);color:#fff;font:700 13px var(--body);cursor:pointer}
+.vid-pause svg{width:16px;height:16px}
+.vid-pause .i-play{display:none}
+.vid-pause.is-paused .i-play{display:block}
+.vid-pause.is-paused .i-pause{display:none}
+.vid-pause[hidden]{display:none}
+.vid-pause:focus-visible{outline-color:#fff}
+.marquee{position:relative}
+.marquee.paused .track,.marquee:focus-within .track{animation-play-state:paused}
+.marquee-pause{position:absolute;right:.5rem;top:50%;translate:0 -50%;z-index:1;min-height:36px;padding:.25rem .8rem;border-radius:999px;border:1.5px solid rgba(255,255,255,.7);background:var(--cobalt);color:#fff;font:700 13px var(--body);cursor:pointer}
+.marquee-pause:focus-visible{outline-color:#fff}
+@media (max-width:959px){
+ .hero{display:flex;flex-direction:column;padding-bottom:0}
+ .hero-inner{order:1}
+ .hero-photo{order:2;margin:2.5rem 0 0}
+ .hero-photo::after{inset:0 0 auto;height:30%;background:linear-gradient(var(--navy),transparent)}
+}

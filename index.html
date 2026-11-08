@@ -62,6 +62,7 @@
 </section>
 
 <div class="marquee">
+<button class="marquee-pause" type="button">Pause scrolling list</button>
 <p class="sr-only">Built for businesses like cafés, hair salons, barbers, plumbers, electricians, bakeries, spaza shops and more.</p>
 <div class="track" aria-hidden="true">
 <ul><li>Cafés</li><li>Hair salons</li><li>Barbers</li><li>Plumbers</li><li>Electricians</li><li>Bakeries</li><li>Spaza shops</li><li>Car washes</li><li>Nail studios</li><li>Caterers</li><li>Tutors</li><li>Mechanics</li><li>Photographers</li><li>Shisanyamas</li></ul>
@@ -71,7 +72,8 @@
 
 <section class="section welcome" id="welcome" aria-labelledby="wel-h">
 <div class="wrap welcome-grid">
-<div class="phone" data-reveal="zoom"><video class="vid" data-video="welcome" playsinline preload="none" poster="assets/video/welcome-poster.webp" width="720" height="1280" aria-label="Welcome to Site49 video" muted loop data-autoplay><source src="assets/video/welcome.mp4" type="video/mp4"><track kind="captions" srclang="en" label="English" src="assets/video/welcome.en.vtt">Your browser can’t play this video. <a href="assets/video/welcome.mp4">Download it</a>.</video>
+<div class="phone" data-reveal="zoom"><video class="vid" data-video="welcome" playsinline preload="none" poster="assets/video/welcome-poster.webp" width="720" height="1280" aria-label="Welcome to Site49 video" muted loop data-autoplay data-full="assets/video/welcome.mp4"><source src="assets/video/welcome-preview.mp4" type="video/mp4"><track kind="captions" srclang="en" label="English" src="assets/video/welcome.en.vtt" default>Your browser can’t play this video. <a href="assets/video/welcome.mp4">Download it</a>.</video>
+<button class="vid-pause" type="button" data-for="welcome" hidden><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z" fill="currentColor"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="currentColor"/></svg><span class="lbl">Pause preview</span></button>
 <button class="vid-sound" type="button" data-for="welcome"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Play with sound</button></div>
 <div data-reveal>
 <p class="eyebrow">Welcome to Site49</p>
