@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Site49 | Your small business website for R49/month</title>
-<meta name="description" content="Site49 WebStarter builds and hosts a four-page website for South African small businesses: R49 per month, R0 setup, and a private demo to approve before launch.">
+<title>Site49 | A website for your South African small business, R49/month</title>
+<meta name="description" content="Site49 WebStarter builds and hosts a four-page website for South African small businesses: R49 per month, R0 setup, pay by EFT, and a private preview to approve before you go live.">
 <meta name="theme-color" content="#0b2145">
 <link rel="canonical" href="https://site49.co.za/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -12,79 +12,154 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Site49">
 <meta property="og:locale" content="en_ZA">
-<meta property="og:title" content="Site49 | Your small business website for R49/month">
-<meta property="og:description" content="Site49 WebStarter builds and hosts a four-page website for South African small businesses: R49 per month, R0 setup, and a private demo to approve before launch.">
+<meta property="og:title" content="Site49 | A website for your South African small business, R49/month">
+<meta property="og:description" content="Site49 WebStarter builds and hosts a four-page website for South African small businesses: R49 per month, R0 setup, pay by EFT, and a private preview to approve before you go live.">
 <meta property="og:url" content="https://site49.co.za/">
 <meta property="og:image" content="https://site49.co.za/assets/brand/social-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Site49 WebStarter: your four-page business website for R49 per month">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" type="image/avif" imagesrcset="assets/images/sa-hero-800.avif 800w, assets/images/sa-hero-1200.avif 1200w, assets/images/sa-hero-1672.avif 1672w" imagesizes="100vw">
 <link rel="stylesheet" href="assets/site.css">
-<script src="assets/scroll.js" defer></script>
+<script>document.documentElement.classList.add('js')</script>
+<script src="assets/site.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://site49.co.za/#org","name":"Site49","url":"https://site49.co.za/","logo":"https://site49.co.za/assets/brand/social-card.png","email":"info@site49.co.za","telephone":"+27783838383","address":{"@type":"PostalAddress","addressLocality":"Johannesburg","addressCountry":"ZA"},"areaServed":{"@type":"Country","name":"South Africa"}},
+{"@type":"Service","name":"WebStarter","serviceType":"Small business website design and hosting","provider":{"@id":"https://site49.co.za/#org"},"areaServed":{"@type":"Country","name":"South Africa"},"description":"A four-page website (Home, About Us, Menu/Products/Portfolio, Contact Us) built by the Site49 team, with hosting and a Site49 subdomain included.","offers":{"@type":"Offer","price":"49","priceCurrency":"ZAR","description":"R49 per month, R0 setup, paid monthly upfront, cancel anytime","url":"https://app.site49.co.za/signup"}}
+]}
+</script>
 </head>
 <body>
+<div class="progress" aria-hidden="true"></div>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
 <div class="wrap bar">
 <a class="logo" href="index.html"><img src="assets/brand/site49-logo.svg" width="150" height="44" alt="Site49 home"></a>
-<nav class="site-nav" aria-label="Main"><a href="index.html#how">How it works</a><a href="index.html#plan">WebStarter</a><a href="examples.html">Examples</a><a href="index.html#faq">FAQs</a><a href="contact.html">Contact</a></nav>
-<div class="header-cta"><a class="login" href="https://app.site49.co.za/login">Log in</a><a class="btn btn-sm" href="https://app.site49.co.za/signup">Create account</a></div>
+<nav class="site-nav" aria-label="Main"><a href="index.html#how">How it works</a><a href="index.html#businesses">Businesses</a><a href="index.html#plan">WebStarter</a><a href="examples.html">Examples</a><a href="index.html#faq">FAQs</a><a href="contact.html">Contact</a></nav>
+<div class="header-cta">
+<button class="sound-btn" type="button" aria-pressed="false" aria-label="Scene sound" data-base="assets/audio/"><svg class="off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="sound-label">Sound off</span></button>
+<a class="login" href="https://app.site49.co.za/login">Log in</a><a class="btn btn-sm" href="https://app.site49.co.za/signup">Create account</a>
+</div>
 </div>
 </header>
 <main id="main">
-<section class="hero wrap" id="top">
-<div class="hero-copy">
-<p class="eyebrow"><span aria-hidden="true"></span> Built for South African small businesses</p>
-<h1>Your business.<br><em>Online.</em></h1>
-<p class="intro">Share your business details and photos. We build your four-page website and send you a private preview to approve.</p>
-<div class="actions"><a class="btn" href="https://app.site49.co.za/signup">Create your account</a><a class="link" href="#how">See how it works ↓</a></div>
-<p class="fine">R49/month · R0 setup · Hosting included</p>
-<p class="fine">Already have an account? <a href="https://app.site49.co.za/login">Log in</a></p>
+<section class="hero dark" id="top" data-sound="cafe">
+<div class="hero-photo" data-speed=".12"><picture><source type="image/avif" srcset="assets/images/sa-hero-800.avif 800w, assets/images/sa-hero-1200.avif 1200w, assets/images/sa-hero-1672.avif 1672w" sizes="100vw"><source type="image/webp" srcset="assets/images/sa-hero-800.webp 800w, assets/images/sa-hero-1200.webp 1200w, assets/images/sa-hero-1672.webp 1672w" sizes="100vw"><img src="assets/images/sa-hero-1200.webp" width="1672" height="941" fetchpriority="high" alt="Café owner in Soweto holding up her phone showing her new website with a green WhatsApp us button"></picture></div>
+<div class="wrap hero-inner">
+<div>
+<p class="eyebrow" data-enter>Made in Joburg for Mzansi’s small businesses</p>
+<h1 data-enter style="--d:.08s">Your business.<br><em class="hl">Online.</em></h1>
+<p class="lead" data-enter style="--d:.16s">Café, salon, plumber or spaza shop: send us your details and photos, and the Site49 team builds your four-page website. You approve a private preview before anything goes live.</p>
+<div class="actions" data-enter style="--d:.24s"><a class="btn" href="https://app.site49.co.za/signup">Create your account <span class="arr" aria-hidden="true">→</span></a><a class="btn btn-ghost" href="#how">See how it works</a></div>
+<ul class="chips" data-enter style="--d:.32s" aria-label="WebStarter at a glance"><li><b>R49</b>/month</li><li><b>R0</b> setup</li><li>Hosting included</li><li>Pay by EFT</li></ul>
+<p class="fine" data-enter style="--d:.38s">Already have an account? <a href="https://app.site49.co.za/login">Log in</a></p>
 </div>
-<figure class="hero-art">
-<picture><source type="image/webp" srcset="assets/images/hero-768.webp 768w, assets/images/hero.webp 1536w" sizes="(min-width:800px) 560px, calc(100vw - 2rem)"><img src="assets/images/hero.webp" width="1536" height="1024" fetchpriority="high" alt="Illustration of a website layout on a laptop and a smartphone"></picture>
-<figcaption data-drift><span aria-hidden="true">✦</span> Designed for mobile and desktop</figcaption>
-<p class="caption">Illustrative concept: AI-generated artwork.</p>
-</figure>
+<p class="float f2 hero-live" data-enter style="--d:.5s"><span class="dot" aria-hidden="true">●</span><span>Live on your own address<small>yourname.mysite49.co.za</small></span></p>
+</div>
+<span class="scroll-cue" aria-hidden="true"></span>
 </section>
 
-<section class="band" id="how">
-<div class="wrap process">
-<div><p class="eyebrow">From sign-up to live</p><h2>Five steps to your website.</h2><p class="intro">Everything happens in your Site49 account, so you always know what comes next.</p><p class="actions"><a class="btn" href="https://app.site49.co.za/signup">Create your account</a></p></div>
+<div class="marquee">
+<p class="sr-only">Built for businesses like cafés, hair salons, barbers, plumbers, electricians, bakeries, spaza shops and more.</p>
+<div class="track" aria-hidden="true">
+<ul><li>Cafés</li><li>Hair salons</li><li>Barbers</li><li>Plumbers</li><li>Electricians</li><li>Bakeries</li><li>Spaza shops</li><li>Car washes</li><li>Nail studios</li><li>Caterers</li><li>Tutors</li><li>Mechanics</li><li>Photographers</li><li>Shisanyamas</li></ul>
+<ul><li>Cafés</li><li>Hair salons</li><li>Barbers</li><li>Plumbers</li><li>Electricians</li><li>Bakeries</li><li>Spaza shops</li><li>Car washes</li><li>Nail studios</li><li>Caterers</li><li>Tutors</li><li>Mechanics</li><li>Photographers</li><li>Shisanyamas</li></ul>
+</div>
+</div>
+
+<section class="section tint" id="how">
+<div class="wrap">
+<div class="section-head">
+<div data-reveal><p class="eyebrow">From sign-up to live</p><h2>Five steps to your website.</h2></div>
+<p class="lead" data-reveal style="--d:.1s">Everything happens in your Site49 account, so you always know what comes next. No tech skills, no setup fee, no dollar billing: just R49 a month.</p>
+</div>
+<div class="how">
+<div class="how-visual" aria-hidden="true">
+<div class="screen photo">
+<div class="panes">
+<div class="pane show" data-url="app.site49.co.za/signup"><picture><source type="image/avif" srcset="assets/images/sa-step-1-600.avif 600w, assets/images/sa-step-1-1000.avif 1000w, assets/images/sa-step-1-1448.avif 1448w" sizes="(min-width:1000px) 45vw, 100vw"><source type="image/webp" srcset="assets/images/sa-step-1-600.webp 600w, assets/images/sa-step-1-1000.webp 1000w, assets/images/sa-step-1-1448.webp 1448w" sizes="(min-width:1000px) 45vw, 100vw"><img src="assets/images/sa-step-1-1000.webp" width="1448" height="1086" loading="lazy" decoding="async" alt=""></picture></div>
+<div class="pane" data-url="app.site49.co.za/business"><picture><source type="image/avif" srcset="assets/images/sa-step-2-600.avif 600w, assets/images/sa-step-2-1000.avif 1000w, assets/images/sa-step-2-1448.avif 1448w" sizes="(min-width:1000px) 45vw, 100vw"><source type="image/webp" srcset="assets/images/sa-step-2-600.webp 600w, assets/images/sa-step-2-1000.webp 1000w, assets/images/sa-step-2-1448.webp 1448w" sizes="(min-width:1000px) 45vw, 100vw"><img src="assets/images/sa-step-2-1000.webp" width="1448" height="1086" loading="lazy" decoding="async" alt=""></picture></div>
+<div class="pane" data-url="app.site49.co.za/uploads"><picture><source type="image/avif" srcset="assets/images/sa-step-3-600.avif 600w, assets/images/sa-step-3-1000.avif 1000w, assets/images/sa-step-3-1448.avif 1448w" sizes="(min-width:1000px) 45vw, 100vw"><source type="image/webp" srcset="assets/images/sa-step-3-600.webp 600w, assets/images/sa-step-3-1000.webp 1000w, assets/images/sa-step-3-1448.webp 1448w" sizes="(min-width:1000px) 45vw, 100vw"><img src="assets/images/sa-step-3-1000.webp" width="1448" height="1086" loading="lazy" decoding="async" alt=""></picture></div>
+<div class="pane" data-url="app.site49.co.za/preview"><picture><source type="image/avif" srcset="assets/images/sa-step-4-600.avif 600w, assets/images/sa-step-4-1000.avif 1000w, assets/images/sa-step-4-1448.avif 1448w" sizes="(min-width:1000px) 45vw, 100vw"><source type="image/webp" srcset="assets/images/sa-step-4-600.webp 600w, assets/images/sa-step-4-1000.webp 1000w, assets/images/sa-step-4-1448.webp 1448w" sizes="(min-width:1000px) 45vw, 100vw"><img src="assets/images/sa-step-4-1000.webp" width="1448" height="1086" loading="lazy" decoding="async" alt=""></picture></div>
+<div class="pane" data-url="yourname.mysite49.co.za"><picture><source type="image/avif" srcset="assets/images/sa-step-5-600.avif 600w, assets/images/sa-step-5-1000.avif 1000w, assets/images/sa-step-5-1448.avif 1448w" sizes="(min-width:1000px) 45vw, 100vw"><source type="image/webp" srcset="assets/images/sa-step-5-600.webp 600w, assets/images/sa-step-5-1000.webp 1000w, assets/images/sa-step-5-1448.webp 1448w" sizes="(min-width:1000px) 45vw, 100vw"><img src="assets/images/sa-step-5-1000.webp" width="1448" height="1086" loading="lazy" decoding="async" alt=""></picture></div>
+</div>
+</div>
+<p class="caption-step">Step 1 of 5: Create your account</p>
+</div>
 <ol class="steps">
-<li><span aria-hidden="true">01</span><div><h3>Create your account</h3><p>Sign up with your email and a password, then confirm your email.</p></div></li>
-<li><span aria-hidden="true">02</span><div><h3>Add your business details</h3><p>Business name, WhatsApp number, opening hours, address and social links.</p></div></li>
-<li><span aria-hidden="true">03</span><div><h3>Upload your photos, logo and menu</h3><p>Add your photos, logo and your menu or price list.</p></div></li>
-<li><span aria-hidden="true">04</span><div><h3>Approve your preview</h3><p>We build your site and send you a private preview to approve. One revision round is included.</p></div></li>
-<li><span aria-hidden="true">05</span><div><h3>Pay and go live</h3><p>Pay R49/month by EFT (bank details are shown in your account; card payments are coming soon). Your site goes live at yourname.mysite49.co.za.</p></div></li>
+<li class="step" data-reveal><span class="num" aria-hidden="true">01</span><h3>Create your account</h3><p>Sign up with your email and a password, then confirm your email.</p><div class="mini"><picture><source type="image/avif" srcset="assets/images/sa-step-1-600.avif 600w, assets/images/sa-step-1-1000.avif 1000w, assets/images/sa-step-1-1448.avif 1448w" sizes="100vw"><source type="image/webp" srcset="assets/images/sa-step-1-600.webp 600w, assets/images/sa-step-1-1000.webp 1000w, assets/images/sa-step-1-1448.webp 1448w" sizes="100vw"><img src="assets/images/sa-step-1-1000.webp" width="1448" height="1086" loading="lazy" decoding="async" alt="A man at his kitchen table in a Joburg township creating his Site49 account on his phone"></picture></div></li>
+<li class="step" data-reveal><span class="num" aria-hidden="true">02</span><h3>Add your business details</h3><p>Business name, WhatsApp number, opening hours, address and social links.</p><div class="mini"><picture><source type="image/avif" srcset="assets/images/sa-step-2-600.avif 600w, assets/images/sa-step-2-1000.avif 1000w, assets/images/sa-step-2-1448.avif 1448w" sizes="100vw"><source type="image/webp" srcset="assets/images/sa-step-2-600.webp 600w, assets/images/sa-step-2-1000.webp 1000w, assets/images/sa-step-2-1448.webp 1448w" sizes="100vw"><img src="assets/images/sa-step-2-1000.webp" width="1448" height="1086" loading="lazy" decoding="async" alt="A braiding-salon owner in Durban adding her business details, WhatsApp number, hours and address on her phone"></picture></div></li>
+<li class="step" data-reveal><span class="num" aria-hidden="true">03</span><h3>Upload your photos, logo and menu</h3><p>Add your photos, logo and your menu or price list.</p><div class="mini"><picture><source type="image/avif" srcset="assets/images/sa-step-3-600.avif 600w, assets/images/sa-step-3-1000.avif 1000w, assets/images/sa-step-3-1448.avif 1448w" sizes="100vw"><source type="image/webp" srcset="assets/images/sa-step-3-600.webp 600w, assets/images/sa-step-3-1000.webp 1000w, assets/images/sa-step-3-1448.webp 1448w" sizes="100vw"><img src="assets/images/sa-step-3-1000.webp" width="1448" height="1086" loading="lazy" decoding="async" alt="A home baker in Cape Town photographing her koeksisters and cakes and uploading them on her laptop"></picture></div></li>
+<li class="step" data-reveal><span class="num" aria-hidden="true">04</span><h3>Approve your preview</h3><p>We build your site and send you a private preview to approve. One revision round is included.</p><div class="mini"><picture><source type="image/avif" srcset="assets/images/sa-step-4-600.avif 600w, assets/images/sa-step-4-1000.avif 1000w, assets/images/sa-step-4-1448.avif 1448w" sizes="100vw"><source type="image/webp" srcset="assets/images/sa-step-4-600.webp 600w, assets/images/sa-step-4-1000.webp 1000w, assets/images/sa-step-4-1448.webp 1448w" sizes="100vw"><img src="assets/images/sa-step-4-1000.webp" width="1448" height="1086" loading="lazy" decoding="async" alt="A mechanic in his Pretoria workshop reviewing his website preview on a tablet with an Approve button"></picture></div></li>
+<li class="step" data-reveal><span class="num" aria-hidden="true">05</span><h3>Pay and go live</h3><p>Pay R49/month by EFT (bank details are shown in your account; card payments are coming soon). Your site goes live at yourname.mysite49.co.za.</p><div class="mini"><picture><source type="image/avif" srcset="assets/images/sa-step-5-600.avif 600w, assets/images/sa-step-5-1000.avif 1000w, assets/images/sa-step-5-1448.avif 1448w" sizes="100vw"><source type="image/webp" srcset="assets/images/sa-step-5-600.webp 600w, assets/images/sa-step-5-1000.webp 1000w, assets/images/sa-step-5-1448.webp 1448w" sizes="100vw"><img src="assets/images/sa-step-5-1000.webp" width="1448" height="1086" loading="lazy" decoding="async" alt="A spaza shop owner smiling behind his counter, holding up his phone showing his website live"></picture></div></li>
 </ol>
 </div>
-</section>
-
-<section class="wrap example" id="examples">
-<figure>
-<picture><source type="image/webp" srcset="assets/images/shop-768.webp 768w, assets/images/shop.webp 1536w" sizes="(min-width:800px) 560px, calc(100vw - 2rem)"><img src="assets/images/shop.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Illustration of a coffee shop storefront next to a browser window showing its website"></picture>
-<figcaption>Illustrative concept: AI-generated artwork of a fictional café.</figcaption>
-</figure>
-<div>
-<p class="eyebrow">Examples</p>
-<h2>Give customers a place to find you.</h2>
-<p class="intro">Show off the work you’re proud of, share your opening hours and let visitors reach you directly. See three fictional sample websites to get a feel for it.</p>
-<ul class="tags"><li>Home</li><li>About Us</li><li>Menu, products or portfolio</li><li>Contact Us</li></ul>
-<p class="actions"><a class="btn btn-ghost" href="examples.html">See the examples</a></p>
+<p class="actions" data-reveal><a class="btn" href="https://app.site49.co.za/signup">Start step 1 now <span class="arr" aria-hidden="true">→</span></a></p>
 </div>
 </section>
 
-<section class="wrap" id="plan">
-<div class="plan">
-<div>
+<section id="businesses" aria-labelledby="biz-h">
+<div class="section scenes-intro">
+<div class="wrap section-head">
+<div data-reveal><p class="eyebrow">What your website does for you</p><h2 id="biz-h">More customers, fewer phone calls.</h2></div>
+<p class="lead" data-reveal style="--d:.1s">From the taxi rank to the braai stand, your customers are on their phones. Your Site49 website puts your menu, prices, photos and a WhatsApp button right there. Turn on <strong>Sound</strong> at the top to hear each scene.</p>
+</div>
+</div>
+<article class="scene" data-sound="salon" aria-labelledby="sc1">
+<div class="bg" data-speed=".16"><picture><source type="image/avif" srcset="assets/images/sa-benefit-whatsapp-800.avif 800w, assets/images/sa-benefit-whatsapp-1200.avif 1200w, assets/images/sa-benefit-whatsapp-1672.avif 1672w" sizes="100vw"><source type="image/webp" srcset="assets/images/sa-benefit-whatsapp-800.webp 800w, assets/images/sa-benefit-whatsapp-1200.webp 1200w, assets/images/sa-benefit-whatsapp-1672.webp 1672w" sizes="100vw"><img src="assets/images/sa-benefit-whatsapp-1200.webp" width="1672" height="941" loading="lazy" decoding="async" alt="A woman in a minibus taxi in Johannesburg tapping a big green WhatsApp us button on a hair salon website"></picture></div>
+<div class="wrap scene-inner">
+<div data-reveal>
+<span class="tag">Hair salons · Barbers · Nail studios</span>
+<h2 id="sc1">Booked from the back of the taxi.</h2>
+<p class="lead">Customers see your styles and prices, then WhatsApp you in one tap. The message lands on your own business WhatsApp.</p>
+<ul class="pages" aria-label="What this gives you"><li>WhatsApp button</li><li>Portfolio of your work</li><li>Prices and hours</li></ul>
+<p class="actions"><a class="btn btn-light" href="https://app.site49.co.za/signup">Create your account <span class="arr" aria-hidden="true">→</span></a><a class="help-link" href="demos/corner-chair/index.html">See a barbershop sample<span class="sr-only">: Corner Chair, fictional</span></a></p>
+</div>
+</div>
+</article>
+<article class="scene" data-sound="cafe" aria-labelledby="sc2">
+<div class="bg" data-speed=".16"><picture><source type="image/avif" srcset="assets/images/sa-benefit-menu-800.avif 800w, assets/images/sa-benefit-menu-1200.avif 1200w, assets/images/sa-benefit-menu-1672.avif 1672w" sizes="100vw"><source type="image/webp" srcset="assets/images/sa-benefit-menu-800.webp 800w, assets/images/sa-benefit-menu-1200.webp 1200w, assets/images/sa-benefit-menu-1672.webp 1672w" sizes="100vw"><img src="assets/images/sa-benefit-menu-1200.webp" width="1672" height="941" loading="lazy" decoding="async" alt="A customer at a busy shisanyama checking the menu and opening hours on the eatery’s website on her phone"></picture></div>
+<div class="wrap scene-inner">
+<div data-reveal>
+<span class="tag">Cafés · Shisanyamas · Home bakers</span>
+<h2 id="sc2">Your menu, in every pocket.</h2>
+<p class="lead">No more “are you open?” calls. Your menu, opening hours and directions are always one search away, and up to date.</p>
+<ul class="pages" aria-label="What this gives you"><li>Menu page</li><li>Opening hours</li><li>Address and directions</li></ul>
+<p class="actions"><a class="btn btn-light" href="https://app.site49.co.za/signup">Create your account <span class="arr" aria-hidden="true">→</span></a><a class="help-link" href="demos/mzansi-morning/index.html">See a café sample<span class="sr-only">: Mzansi Morning, fictional</span></a></p>
+</div>
+</div>
+</article>
+<article class="scene" data-sound="workshop" aria-labelledby="sc3">
+<div class="bg" data-speed=".16"><picture><source type="image/avif" srcset="assets/images/sa-benefit-trades-800.avif 800w, assets/images/sa-benefit-trades-1200.avif 1200w, assets/images/sa-benefit-trades-1672.avif 1672w" sizes="100vw"><source type="image/webp" srcset="assets/images/sa-benefit-trades-800.webp 800w, assets/images/sa-benefit-trades-1200.webp 1200w, assets/images/sa-benefit-trades-1672.webp 1672w" sizes="100vw"><img src="assets/images/sa-benefit-trades-1200.webp" width="1672" height="941" loading="lazy" decoding="async" alt="A plumber beside his white bakkie showing a homeowner his business website with photos of finished jobs"></picture></div>
+<div class="wrap scene-inner">
+<div data-reveal>
+<span class="tag">Plumbers · Electricians · Mechanics</span>
+<h2 id="sc3">Look the part before you knock.</h2>
+<p class="lead">Show finished jobs, your services and where you work, so new customers trust you before you arrive.</p>
+<ul class="pages" aria-label="What this gives you"><li>Photos of your jobs</li><li>Services list</li><li>Contact Us page</li></ul>
+<p class="actions"><a class="btn btn-light" href="https://app.site49.co.za/signup">Create your account <span class="arr" aria-hidden="true">→</span></a><a class="help-link" href="demos/earth-and-form/index.html">See a portfolio sample<span class="sr-only">: Earth and Form, fictional</span></a></p>
+</div>
+</div>
+</article>
+</section>
+
+<section class="section dark" id="plan">
+<div class="wrap plan">
+<div class="plan-copy" data-reveal="left">
 <p class="eyebrow">WebStarter</p>
-<h2>One simple<br>website plan.</h2>
-<p>For small businesses that need a professional online presence.</p>
+<h2>One simple website plan.</h2>
+<p class="lead">For South African small businesses that need a professional online presence, priced in rand and paid by EFT.</p>
+<ul class="plan-points">
+<li>Built for you by the Site49 team, not a do-it-yourself builder</li>
+<li>Made to look good on the phones your customers use</li>
+<li>Local help on WhatsApp when you need it</li>
+</ul>
+<div class="plan-devices"><picture><source type="image/avif" srcset="assets/images/sa-devices-600.avif 600w, assets/images/sa-devices-1000.avif 1000w, assets/images/sa-devices-1448.avif 1448w" sizes="(min-width:960px) 40vw, 100vw"><source type="image/webp" srcset="assets/images/sa-devices-600.webp 600w, assets/images/sa-devices-1000.webp 1000w, assets/images/sa-devices-1448.webp 1448w" sizes="(min-width:960px) 40vw, 100vw"><img src="assets/images/sa-devices-1000.webp" width="1448" height="1086" loading="lazy" decoding="async" alt="A laptop and phone showing a South African small-business website with Home, About Us, Menu and Contact Us pages and a WhatsApp us button"></picture></div>
 </div>
-<div class="price">
-<p class="amount"><strong>R49</strong> / month</p>
+<div class="price" data-reveal="right">
+<p class="amount"><strong>R49</strong><span>/ month</span></p>
 <p class="setup">R0 setup · paid monthly upfront</p>
 <ul>
 <li>Four pages: Home, About Us, Menu/Products/Portfolio and Contact Us</li>
@@ -94,31 +169,55 @@
 <li>Edits after launch are R49 per request, paid before we make them: list your changes point by point with any files, and we make them within the four-page design</li>
 <li>Cancel anytime</li>
 </ul>
-<p class="plan-note">Custom domains and business email are separate add-ons. Billing continues monthly while your content is outstanding. Site49 keeps the rights to the design and templates, and there is no website export.</p>
-<p class="actions"><a class="btn" href="https://app.site49.co.za/signup">Create your account</a><a class="help-link" href="https://wa.me/27783838383?text=Hi%20Site49%2C%20I%27d%20like%20some%20help%20with%20WebStarter." target="_blank" rel="noopener noreferrer">Need help? Chat on WhatsApp<span class="sr-only"> (opens in a new tab)</span></a></p>
+<div class="pay-row" aria-label="Payment options"><span>EFT</span><span class="soon">Card: coming soon</span></div>
+<p class="plan-note">Your own domain is coming soon (see below). Business email is a separate add-on. Billing continues monthly while your content is outstanding. Site49 keeps the rights to the design and templates, and there is no website export.</p>
+<p class="actions"><a class="btn" href="https://app.site49.co.za/signup">Create your account <span class="arr" aria-hidden="true">→</span></a><a class="help-link" href="https://wa.me/27783838383?text=Hi%20Site49%2C%20I%27d%20like%20some%20help%20with%20WebStarter." target="_blank" rel="noopener noreferrer">Need help? Chat on WhatsApp<span class="sr-only"> (opens in a new tab)</span></a></p>
 </div>
 </div>
 </section>
 
-<section class="wrap faq" id="faq">
-<div><p class="eyebrow">Good to know</p><h2>Common questions.</h2></div>
-<div>
+<section class="section" id="domain" aria-labelledby="dom-h">
+<div class="wrap domain">
+<div data-reveal>
+<span class="soon-badge">Coming soon</span>
+<h2 id="dom-h">Your own .co.za address.</h2>
+<p class="lead">Every WebStarter site is live at yourname.mysite49.co.za. Soon you can also put it on a domain of your own, painted on your window and printed on your bakkie.</p>
+<div class="domain-photo"><picture><source type="image/avif" srcset="assets/images/sa-domain-800.avif 800w, assets/images/sa-domain-1200.avif 1200w, assets/images/sa-domain-1672.avif 1672w" sizes="(min-width:960px) 45vw, 100vw"><source type="image/webp" srcset="assets/images/sa-domain-800.webp 800w, assets/images/sa-domain-1200.webp 1200w, assets/images/sa-domain-1672.webp 1672w" sizes="(min-width:960px) 45vw, 100vw"><img src="assets/images/sa-domain-1200.webp" width="1672" height="941" loading="lazy" decoding="async" alt="A colourful Durban shopfront with yourbusiness.co.za painted on the window, and a phone showing the same address"></picture></div>
+</div>
+<div class="addr" data-reveal="zoom">
+<div class="screen-bar"><i></i><i></i><i></i><span><span class="typed" data-type="yourbusiness.co.za|thandiskitchen.co.za|sharpfades.co.za">yourbusiness.co.za</span></span></div>
+<div class="addr-body">
+<div class="opt"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><h3>A new .co.za domain</h3><p>R149 for 1 year.</p></div>
+<div class="opt"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><h3>Link a domain you already own</h3><p>Free. We give you the DNS setup steps.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section tint" id="faq">
+<div class="wrap faq">
+<div class="faq-head" data-reveal><p class="eyebrow">Good to know</p><h2>Common questions.</h2><p class="lead">Still unsure? Ask us on <a href="https://wa.me/27783838383?text=Hi%20Site49%2C%20I%27d%20like%20some%20help%20with%20WebStarter." target="_blank" rel="noopener noreferrer">WhatsApp<span class="sr-only"> (opens in a new tab)</span></a>.</p></div>
+<div data-reveal style="--d:.1s">
 <details><summary>Can you set up my account for me?</summary><p><a href="https://wa.me/27783838383?text=Hi%20Site49%2C%20I%27d%20like%20you%20to%20set%20up%20my%20WebStarter%20account%20for%20me." target="_blank" rel="noopener noreferrer">Prefer to send everything on WhatsApp? We can set up your account for you.<span class="sr-only"> (opens in a new tab)</span></a></p></details>
 <details><summary>What do I get for R49 a month?</summary><p>A four-page website (Home, About Us, Menu/Products/Portfolio and Contact Us) with hosting and an included Site49 subdomain. There is no setup fee.</p></details>
 <details><summary>How long until I see my website?</summary><p>Your first private demo is ready within two South African business days after you send complete content. One round of changes is included before you approve it, and only the approved version goes live.</p></details>
-<details><summary>When does billing start?</summary><p>Billing starts with your first payment. Today you pay by EFT using the bank details shown in your account; card payments are coming soon. WebStarter is paid monthly upfront, and billing continues each month while your business details are still outstanding, until you cancel.</p></details>
+<details><summary>How do I pay, and when does billing start?</summary><p>Billing starts with your first payment. Today you pay by EFT using the bank details shown in your account; card payments are coming soon. WebStarter is paid monthly upfront, and billing continues each month while your business details are still outstanding, until you cancel.</p></details>
 <details><summary>Can I cancel?</summary><p>Yes, you can cancel anytime.</p></details>
-<details><summary>Can I use my own domain and email?</summary><p>Custom domains and business email are separate add-ons and are not part of the R49/month plan. Ask us on WhatsApp about adding them.</p></details>
+<details><summary>Can I use my own domain and email?</summary><p>Coming soon: register a new .co.za domain for R149 for 1 year, or link a domain you already own for free (we give you the DNS setup steps). Until then, your site lives at yourname.mysite49.co.za. Business email is a separate add-on; ask us on WhatsApp.</p></details>
 <details><summary>How do I request an edit?</summary><p>One round of changes is included before approval. After launch, each edit request is R49, paid before we make it. Send us your changes point by point, with any photos or files they need. We make anything that fits the four-page design: text, images, colours, layout or a redesign, contact details, hours and menu, product or portfolio items. New pages or features such as online shops or bookings are not part of WebStarter. Our team follows up with you on WhatsApp.</p></details>
 <details><summary>Can I export the website?</summary><p>No. Your subscription covers use of the hosted website. Site49 keeps the rights to the design and templates it supplies, and website export is not available.</p></details>
 </div>
+</div>
 </section>
 
-<section class="cta-band" aria-labelledby="cta-h">
-<div class="wrap">
+<section class="cta dark" aria-labelledby="cta-h">
+<div class="blob b1" data-speed="-.2" aria-hidden="true"></div>
+<div class="blob b2" data-speed=".2" aria-hidden="true"></div>
+<div class="wrap" data-reveal="zoom">
+<p class="eyebrow">Let’s go, Mzansi</p>
 <h2 id="cta-h">Ready to get your business online?</h2>
 <p class="lead">Create your account and follow the steps. R49/month, R0 setup, cancel anytime.</p>
-<p class="actions"><a class="btn" href="https://app.site49.co.za/signup">Create your account</a><a class="help-link" href="https://wa.me/27783838383?text=Hi%20Site49%2C%20I%27d%20like%20some%20help%20with%20WebStarter." target="_blank" rel="noopener noreferrer">Need help? Chat on WhatsApp<span class="sr-only"> (opens in a new tab)</span></a></p>
+<p class="actions"><a class="btn btn-light" href="https://app.site49.co.za/signup">Create your account <span class="arr" aria-hidden="true">→</span></a><a class="help-link" href="https://wa.me/27783838383?text=Hi%20Site49%2C%20I%27d%20like%20some%20help%20with%20WebStarter." target="_blank" rel="noopener noreferrer">Need help? Chat on WhatsApp<span class="sr-only"> (opens in a new tab)</span></a></p>
 </div>
 </section>
 </main>
@@ -126,13 +225,13 @@
 <div class="wrap foot">
 <div>
 <a class="foot-logo" href="index.html"><img src="assets/brand/site49-logo-light.svg" width="150" height="44" alt="Site49 home"></a>
-<p><strong>Site49</strong> · Johannesburg, South Africa</p>
+<p><strong>Site49</strong> · Johannesburg, South Africa · Websites for small businesses across South Africa</p>
 <p><a href="mailto:info@site49.co.za">info@site49.co.za</a> · <a href="tel:+27783838383">+27 78 383 8383</a></p>
-<p class="fine-foot">WebStarter: R49/month, R0 setup. Example websites are fictional sample concepts, not real clients.</p>
+<p class="fine-foot">WebStarter: R49/month, R0 setup. Example websites are fictional sample concepts, not real clients. Scene sounds are off unless you turn them on.</p>
 </div>
-<nav class="foot-nav" aria-label="Footer"><a href="index.html#how">How it works</a><a href="index.html#plan">WebStarter</a><a href="examples.html">Examples</a><a href="index.html#faq">FAQs</a><a href="contact.html">Contact</a></nav>
+<nav class="foot-nav" aria-label="Footer"><a href="index.html#how">How it works</a><a href="index.html#plan">WebStarter</a><a href="examples.html">Examples</a><a href="index.html#faq">FAQs</a><a href="contact.html">Contact</a><a href="https://app.site49.co.za/login">Log in</a></nav>
 </div>
 </footer>
-<a class="float-wa" href="https://wa.me/27783838383?text=Hi%20Site49%2C%20I%27d%20like%20some%20help%20with%20WebStarter." target="_blank" rel="noopener noreferrer" aria-label="Need help? Chat to Site49 on WhatsApp (opens in a new tab)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 2.6a9.4 9.4 0 0 0-8 14.3L2.6 21.4l4.7-1.3A9.4 9.4 0 1 0 12 2.6z"/><path transform="translate(6.9 6.9) scale(.43)" fill="currentColor" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Need help? WhatsApp</a>
+<a class="float-wa" href="https://wa.me/27783838383?text=Hi%20Site49%2C%20I%27d%20like%20some%20help%20with%20WebStarter." target="_blank" rel="noopener noreferrer" aria-label="Need help? WhatsApp Site49 (opens in a new tab)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 2.6a9.4 9.4 0 0 0-8 14.3L2.6 21.4l4.7-1.3A9.4 9.4 0 1 0 12 2.6z"/><path transform="translate(6.9 6.9) scale(.43)" fill="currentColor" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.630-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.110 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Need help? WhatsApp</a>
 </body>
 </html>
