@@ -57,25 +57,6 @@
     activate(0);
   }
 
-  /* ---------- domain address typing ---------- */
-  const typed = document.querySelector('[data-type]');
-  if (typed) {
-    const words = typed.dataset.type.split('|');
-    if (!motionQ.matches) typed.textContent = words[0];
-    else {
-      let w = 0, c = 0, dir = 1, started = false;
-      const tick = () => {
-        const word = words[w];
-        c += dir; typed.textContent = word.slice(0, c);
-        let wait = dir > 0 ? 75 : 35;
-        if (c >= word.length) { dir = -1; wait = 1800; }
-        else if (c <= 0) { dir = 1; w = (w + 1) % words.length; wait = 400; }
-        setTimeout(tick, wait);
-      };
-      new IntersectionObserver((es, o) => { if (!started && es[0].isIntersecting) { started = true; o.disconnect(); tick(); } }).observe(typed);
-    }
-  }
-
   /* ---------- videos: one at a time; ambient sound waits while a video plays ---------- */
   const videos = [...document.querySelectorAll('video.vid')];
   let videoPlaying = false;
