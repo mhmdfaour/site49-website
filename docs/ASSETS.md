@@ -6,7 +6,7 @@ Everything here is owned by Site49 or made for it; no stock, no third-party lice
 
 | Files | Source | Licence / rights |
 | --- | --- | --- |
-| `sa-hero`, `sa-step-1`…`sa-step-5`, `sa-step-address`, `sa-step-pay`, `sa-benefit-whatsapp`, `sa-benefit-menu`, `sa-benefit-trades`, `sa-devices` (`.avif`, `.webp`, three widths each) | Generated for Site49 on 2026-11-08 with OpenAI Codex image generation (codex-cli 0.164) from `docs/image-brief.md` (South African small-business owners using the Site49 account and their new websites). People and businesses shown are not real. | Generated for Site49's use under OpenAI's terms (output owned by the user). No real people, brands or logos. |
+| `sa-hero`, `sa-step-1`…`sa-step-5`, `sa-step-address`, `sa-step-pay`, `sa-benefit-whatsapp`, `sa-benefit-menu`, `sa-benefit-trades`, `sa-domain`, `sa-devices` (`.avif`, `.webp`, three widths each) | Generated for Site49 on 2026-11-08 with OpenAI Codex image generation (codex-cli 0.164) from `docs/image-brief.md` (South African small-business owners using the Site49 account and their new websites). People and businesses shown are not real. | Generated for Site49's use under OpenAI's terms (output owned by the user). No real people, brands or logos. |
 | `cafe`, `barber`, `studio` (+ `-640`, `-1024`; AVIF for the 1024 and full sizes) | Existing images of the fictional sample sites (Mzansi Morning, Corner Chair, Earth & Form), already in the repo; AVIF and 1024 px variants added. | Site49, as before. |
 | `hero`, `shop` (old illustrations) | Removed: replaced by the new photography. | — |
 | `assets/brand/*` | Site49 brand files, unchanged. | Site49. |
