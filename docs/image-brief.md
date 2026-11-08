@@ -78,3 +78,16 @@ photos.
 11. `devices.png` — 4:3, clean studio 3D/product render (not a photo): a laptop and a phone on a soft light-blue
     background showing a South African small-business website (warm food photo hero, "WhatsApp us" green button,
     4 page tabs: Home, About Us, Menu, Contact Us). Subtle Site49 brand blues around it. Room around the devices.
+
+
+## Second batch (2026-11-08): steps for the corrected order
+
+1. `step-address.png` — 4:3. A young Coloured woman who runs a nail studio in Cape Town (Bo-Kaap colours through the
+   window) sits at her nail station choosing her web address on her phone. The screen shows a clean card titled
+   "Pick your web address" with an input showing "nailsbylee" followed by ".mysite49.co.za", a green tick and
+   "Available", and a blue "Reserve" button.
+
+2. `step-pay.png` — 4:3. A middle-aged Black man who owns a car wash in Johannesburg (soapy car, buckets, Highveld sun
+   behind) checks his phone with a satisfied look. The screen shows a Site49 card titled "Pay by EFT" with
+   "R49" large, "Bank details shown in your account", a small grey "Card payments coming soon" chip, and a green
+   "Payment received" tick. No bank names or bank logos.
