@@ -1,4 +1,4 @@
-// Site49: scroll effects, parallax, How-it-works stepper and the optional scene sound.
+// Site49: scroll effects, parallax and the How-it-works stepper.
 // Self-hosted, no trackers. Motion is skipped when the visitor prefers reduced motion.
 (() => {
   const doc = document.documentElement;
@@ -76,10 +76,9 @@
     }
   }
 
-  /* ---------- videos: one at a time; ambient sound waits while a video plays ---------- */
+  /* ---------- videos: one at a time ---------- */
   const videos = [...document.querySelectorAll('video.vid')];
-  let videoPlaying = false;
-  const onVideoChange = () => { videoPlaying = videos.some(v => !v.paused && !v.muted); if (window.site49Ambient) window.site49Ambient(); };
+  const onVideoChange = () => {};
   videos.forEach(v => {
     v.addEventListener('play', () => { if (!v.muted) videos.forEach(o => { if (o !== v && !o.paused && !o.muted) o.pause(); }); onVideoChange(); });
     v.addEventListener('pause', onVideoChange);
@@ -136,60 +135,4 @@
     mBtn.addEventListener('click', () => { const p = !marquee.classList.contains('paused'); setM(p); store.set('site49-marquee', p ? 'paused' : 'playing'); });
   }
 
-  /* ---------- scene sound: off by default, plays only after the visitor turns it on ---------- */
-  const btn = document.querySelector('.sound-btn');
-  const scenes = [...document.querySelectorAll('[data-sound]')];
-  if (!btn) return;
-  const base = btn.dataset.base || 'assets/audio/';
-  const tracks = {};
-  const visible = new Map();
-  // Always starts off on every page; only the Sound button turns it on (no auto-resume from a past visit).
-  let on = false;
-  let current = null;
-
-  function track(name) {
-    if (!tracks[name]) {
-      const a = new Audio(base + name + '.mp3');
-      a.loop = true; a.preload = 'auto'; a.volume = 0;
-      tracks[name] = { a, target: 0 };
-    }
-    return tracks[name];
-  }
-  function fade() {
-    let busy = false;
-    for (const t of Object.values(tracks)) {
-      const v = t.a.volume, d = t.target - v;
-      if (Math.abs(d) > 0.01) { t.a.volume = Math.min(1, Math.max(0, v + Math.sign(d) * 0.02)); busy = true; }
-      else { t.a.volume = t.target; if (t.target === 0 && !t.a.paused) t.a.pause(); }
-    }
-    if (busy) requestAnimationFrame(fade);
-  }
-  function pick() {
-    let best = null, ratio = 0;
-    visible.forEach((r, el) => { if (r > ratio) { ratio = r; best = el; } });
-    return best && ratio > 0.25 ? best.dataset.sound : null;
-  }
-  function update() {
-    const want = on && !videoPlaying ? pick() : null;
-    if (want !== current) {
-      if (current) track(current).target = 0;
-      if (want) { const t = track(want); t.target = 0.55; t.a.play().catch(() => {}); }
-      current = want;
-    }
-    requestAnimationFrame(fade);
-  }
-  function render() {
-    btn.setAttribute('aria-pressed', String(on));
-    btn.title = on ? 'Turn scene sound off' : 'Turn scene sound on';
-  }
-  btn.addEventListener('click', () => {
-    on = !on; render(); update();
-  });
-  if ('IntersectionObserver' in window && scenes.length) {
-    const ao = new IntersectionObserver(es => { es.forEach(e => visible.set(e.target, e.intersectionRatio)); update(); }, { threshold: [0, .25, .5, .75, 1] });
-    scenes.forEach(s => ao.observe(s));
-  }
-  document.addEventListener('visibilitychange', () => { if (document.hidden) Object.values(tracks).forEach(t => t.a.pause()); else if (current) track(current).a.play().catch(() => {}); });
-  window.site49Ambient = update;
-  render();
 })();

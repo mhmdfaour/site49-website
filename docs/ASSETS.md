@@ -1,4 +1,4 @@
-# Image and audio sources
+# Image and video sources
 
 Everything here is owned by Site49 or made for it; no stock, no third-party licences, no real brands or logos.
 
@@ -27,15 +27,3 @@ Optimisation: AVIF (quality 50) with WebP fallback via `<picture>`, `srcset`/`si
 Loading: the four click-to-play videos load nothing until played (`preload="none"`; only their ~20 KB posters load). The welcome section loops the silent 0.35 MB preview while on screen (not with reduced motion or Save-Data), with a pause button; the full `welcome.mp4` loads only when the visitor presses "Play with sound". Total video media in the repo: about 16.9 MB.
 
 **Voice licence (owner to confirm):** the voiceover is ElevenLabs voice "Crystal". ElevenLabs allows commercial use of generated audio on paid plans (not the free plan). The videos were generated with the owner's ElevenLabs account; please confirm it was on a paid plan when they were generated.
-
-## Audio (`assets/audio/`)
-
-| File | What | Source | Licence |
-| --- | --- | --- | --- |
-| `cafe.mp3` | 16 s seamless loop: room tone, soft chatter, cups, a steam wand | Synthesised from noise and sine waves by `tools/make-ambience.js` (no samples) | Site49 original work |
-| `salon.mp3` | 16 s loop: room tone, a hair dryer, scissor snips | same | Site49 original work |
-| `workshop.mp3` | 16 s loop: low hum, a wheel/sander whir, wood knocks, a ceramic ring | same | Site49 original work |
-
-Encoded mono 32 kHz, 40 kbps MP3 (about 80 KB each) with ffmpeg. They load only after the visitor turns sound on.
-Regenerate: `node tools/make-ambience.js <tmpdir>` then `ffmpeg -i <tmpdir>/cafe.wav -ac 1 -ar 32000 -b:a 40k assets/audio/cafe.mp3` (same for each).
-ElevenLabs was not used (no tool available in this session; it saves the owner's monthly character budget).
