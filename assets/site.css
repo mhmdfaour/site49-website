@@ -65,7 +65,7 @@ em.hl{font-style:normal;background:linear-gradient(100deg,var(--sky),#b9d3ff 60%
 .bars i{width:3px;background:var(--mint);border-radius:2px;height:40%;animation:eq 1s ease-in-out infinite}
 .bars i:nth-child(2){animation-delay:-.3s}.bars i:nth-child(3){animation-delay:-.6s}
 @keyframes eq{50%{height:100%}}
-.sound-label{display:none}
+.sound-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 @media (max-width:559px){
  .bar{gap:.25rem .5rem}
  .logo img{width:120px;height:35px}
@@ -74,7 +74,7 @@ em.hl{font-style:normal;background:linear-gradient(100deg,var(--sky),#b9d3ff 60%
  .site-nav::-webkit-scrollbar{display:none}
  .site-nav a{white-space:nowrap}
 }
-@media (min-width:560px){.sound-label{display:inline}.login{display:inline-flex}}
+@media (min-width:560px){.sound-label{position:static;width:auto;height:auto;overflow:visible;clip:auto}.login{display:inline-flex}}
 @media (min-width:1080px){
  .bar{flex-wrap:nowrap;padding-block:.75rem}
  .site-nav{order:0;width:auto;margin:0 auto 0 1.5rem}
@@ -389,3 +389,34 @@ em.hl{font-style:normal;background:linear-gradient(100deg,var(--sky),#b9d3ff 60%
 .scene::before{background:linear-gradient(180deg,rgba(6,19,48,0) 0%,rgba(6,19,48,.25) 45%,rgba(6,19,48,.94) 100%),linear-gradient(90deg,rgba(6,19,48,.7),transparent 55%)}
 .scene .help-link{color:#fff}
 @media (max-width:959px){.scene{background:var(--navy-deep);min-height:auto;flex-direction:column;align-items:stretch}.scene .bg{position:relative;inset:auto;aspect-ratio:16/10;margin-bottom:-5rem}.scene .scene-inner{padding-top:0}}
+
+/* videos */
+.phone{position:relative;aspect-ratio:9/16;width:100%;max-width:360px;margin-inline:auto;border-radius:34px;border:9px solid var(--navy);background:var(--navy);overflow:hidden;box-shadow:var(--shadow)}
+.phone .vid{display:block;width:100%;height:100%;object-fit:cover;background:var(--navy)}
+.vid-sound{position:absolute;left:50%;bottom:16px;translate:-50% 0;display:inline-flex;align-items:center;gap:.45rem;min-height:44px;padding:.5rem 1rem;border-radius:999px;border:0;background:#fff;color:var(--navy);font:800 15px var(--head);box-shadow:0 10px 24px -10px rgba(0,0,0,.6);cursor:pointer;white-space:nowrap}
+.vid-sound svg{width:20px;height:20px}
+.vid-sound:hover{background:var(--ice)}
+.vid-sound[hidden]{display:none}
+.welcome{background:linear-gradient(180deg,#fff,var(--ice-2))}
+.welcome-grid{display:grid;gap:3rem;align-items:center}
+@media (min-width:900px){.welcome-grid{grid-template-columns:minmax(280px,380px) 1fr;gap:clamp(3rem,8vw,9rem)}.welcome-grid .phone{max-width:380px}}
+.transcript{margin-top:1.4rem;border:1px solid var(--line);border-radius:16px;background:#fff;max-width:60ch}
+.transcript summary{cursor:pointer;padding:.75rem 1rem;font-weight:700;min-height:44px;display:flex;align-items:center}
+.transcript p{padding:0 1rem .5rem;color:var(--muted);font-size:.95rem}
+.transcript p:last-child{padding-bottom:1rem}
+.tutorial{display:grid;gap:2rem;align-items:center;margin-top:clamp(3rem,6vw,5rem);padding:clamp(1.5rem,3vw,3rem);background:#fff;border:1px solid var(--line);border-radius:32px}
+.tutorial h3{font-size:clamp(1.5rem,1.1rem + 1.2vw,2.2rem);line-height:1.15;margin-bottom:.8rem}
+.tutorial p{color:var(--muted)}
+.tutorial .phone{max-width:300px}
+.vid-note{margin-top:1rem;font-size:.9rem;border-left:3px solid var(--yellow);padding-left:.8rem}
+@media (min-width:900px){.tutorial{grid-template-columns:300px 1fr;gap:clamp(2rem,6vw,6rem)}}
+.vcards{display:grid;gap:2.5rem}
+.vcard h3{margin-top:1.4rem;font-size:1.3rem;text-align:center}
+.vcard > p{text-align:center;color:var(--muted)}
+.vcard .transcript{margin-inline:auto}
+@media (min-width:760px){.vcards{grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,3vw,3.5rem)}}
+@media (max-width:759px){
+ .vcards{grid-auto-flow:column;grid-auto-columns:80%;overflow-x:auto;scroll-snap-type:x mandatory;gap:1rem;padding-bottom:1rem;margin-inline:calc(-1*var(--gutter));padding-inline:var(--gutter);scroll-padding-inline:var(--gutter)}
+ .vcard{scroll-snap-align:start}
+ .welcome-grid .phone{max-width:300px}
+}

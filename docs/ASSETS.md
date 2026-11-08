@@ -13,6 +13,18 @@ Everything here is owned by Site49 or made for it; no stock, no third-party lice
 
 Optimisation: AVIF (quality 50) with WebP fallback via `<picture>`, `srcset`/`sizes`, `width`/`height` on every image, `loading="lazy"` below the fold, made with ImageMagick 7.
 
+## Video (`assets/video/`)
+
+| File | Size | Source |
+| --- | --- | --- |
+| `welcome.mp4` (General promo, 36 s) | 3.0 MB | Owner-approved Site49 marketing videos (`D:\Projects\Site49\marketingideo\out\Site49_*_9x16_Crystal.mp4`, voice: ElevenLabs "Crystal", music and effects synthesised). Re-encoded 720×1280 H.264 (CRF 27, max 950 kbit/s) + AAC 96 kbit/s, faststart. |
+| `tutorial.mp4` (How it works, 56 s) | 3.9 MB | same |
+| `cafe.mp4`, `salon.mp4`, `trades.mp4` (use cases, 37–38 s) | 3.3 / 3.1 / 3.2 MB | same |
+| `*-poster.webp` | 17–23 KB each | Frame at 4 s of each video |
+| `*.en.vtt` | 1–2 KB each | Captions built by `tools/make-captions.js` from the voiceover word timings (`build/voice/*/el-Crystal/cues.json`), written the way the site spells things (Site49, R49, R149, .co.za) |
+
+All five videos load nothing until played (`preload="none"`); the welcome video plays muted and looped only while on screen (not with reduced motion or Save-Data) and has a "Play with sound" button. Total video media: about 16.6 MB.
+
 ## Audio (`assets/audio/`)
 
 | File | What | Source | Licence |

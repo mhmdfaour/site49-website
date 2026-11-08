@@ -24,6 +24,7 @@ Open http://localhost:8080/. (Canonical and Open Graph URLs point at https://sit
 | `portfolio.html`, `about.html` | Redirect stubs (meta refresh plus a link) to `examples.html` and `index.html`; not in the sitemap |
 | `assets/site.css` | All styling (colour tokens at the top: navy `#0b2145`, cobalt `#075bee`, ice `#eaf3ff`, WhatsApp green, mint/yellow accents). Wide layout up to 1480 px content, full-bleed sections, View Transitions between pages |
 | `assets/site.js` | Header state, scroll progress, reveal, parallax (`data-speed`), How-it-works stepper, domain typing, scene sound (`data-sound`) |
+| `assets/video/` | Welcome, tutorial and use-case videos (MP4 + poster + WebVTT captions); captions made by `tools/make-captions.js`. See `docs/ASSETS.md` |
 | `assets/audio/` | Optional ambient loops (`cafe`, `salon`, `workshop`), off by default; made by `tools/make-ambience.js` |
 | `assets/images/` | AVIF + WebP images in several widths, and the step SVGs. Sources and licences: `docs/ASSETS.md` |
 | `assets/brand/` | Logo (`site49-logo.svg`, `site49-logo-light.svg` for navy backgrounds), `favicon.svg`, 1200×630 `social-card.png` (Open Graph) |

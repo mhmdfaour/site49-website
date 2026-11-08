@@ -76,6 +76,35 @@
     }
   }
 
+  /* ---------- videos: one at a time; ambient sound waits while a video plays ---------- */
+  const videos = [...document.querySelectorAll('video.vid')];
+  let videoPlaying = false;
+  const onVideoChange = () => { videoPlaying = videos.some(v => !v.paused && !v.muted); if (window.site49Ambient) window.site49Ambient(); };
+  videos.forEach(v => {
+    v.addEventListener('play', () => { if (!v.muted) videos.forEach(o => { if (o !== v && !o.paused && !o.muted) o.pause(); }); onVideoChange(); });
+    v.addEventListener('pause', onVideoChange);
+    v.addEventListener('ended', onVideoChange);
+    v.addEventListener('volumechange', () => {
+      if (!v.muted) videos.forEach(o => { if (o !== v && !o.paused) o.pause(); });
+      onVideoChange();
+    });
+  });
+  // Welcome video: muted, looped preview that plays only while on screen (never with sound on its own).
+  const welcome = document.querySelector('video[data-autoplay]');
+  const saveData = navigator.connection && navigator.connection.saveData;
+  if (welcome && 'IntersectionObserver' in window) {
+    new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting && motionQ.matches && !saveData && welcome.muted) welcome.play().catch(() => {});
+      else if (!e.isIntersecting && welcome.muted) welcome.pause();
+    }), { threshold: 0.4 }).observe(welcome);
+  }
+  document.querySelectorAll('.vid-sound').forEach(b => b.addEventListener('click', () => {
+    const v = document.querySelector(`video[data-video="${b.dataset.for}"]`);
+    v.muted = false; v.loop = false; v.controls = true; v.currentTime = 0;
+    const t = v.textTracks && v.textTracks[0]; if (t) t.mode = 'showing';
+    v.play().catch(() => {}); b.hidden = true; v.focus();
+  }));
+
   /* ---------- scene sound: off by default, plays only after the visitor turns it on ---------- */
   const btn = document.querySelector('.sound-btn');
   const scenes = [...document.querySelectorAll('[data-sound]')];
@@ -87,7 +116,6 @@
   let on = store.get(KEY) === 'on';
   let unlocked = false;   // browsers only allow sound after a click or key press on this page
   let current = null;
-  const label = btn.querySelector('.sound-label');
 
   function track(name) {
     if (!tracks[name]) {
@@ -112,7 +140,7 @@
     return best && ratio > 0.25 ? best.dataset.sound : null;
   }
   function update() {
-    const want = on && unlocked ? pick() : null;
+    const want = on && unlocked && !videoPlaying ? pick() : null;
     if (want !== current) {
       if (current) track(current).target = 0;
       if (want) { const t = track(want); t.target = 0.55; t.a.play().catch(() => {}); }
@@ -122,7 +150,6 @@
   }
   function render() {
     btn.setAttribute('aria-pressed', String(on));
-    if (label) label.textContent = on ? 'Sound on' : 'Sound off';
     btn.title = on ? 'Turn scene sound off' : 'Turn scene sound on';
   }
   btn.addEventListener('click', () => {
@@ -138,5 +165,6 @@
     scenes.forEach(s => ao.observe(s));
   }
   document.addEventListener('visibilitychange', () => { if (document.hidden) Object.values(tracks).forEach(t => t.a.pause()); else if (current) track(current).a.play().catch(() => {}); });
+  window.site49Ambient = update;
   render();
 })();
