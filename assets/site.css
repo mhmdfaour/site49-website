@@ -53,19 +53,9 @@ em.hl{font-style:normal;background:linear-gradient(100deg,var(--sky),#b9d3ff 60%
 .header-cta{display:flex;align-items:center;gap:.4rem}
 .login{display:none;font-weight:700;font-size:15px;text-decoration:none;color:var(--navy);padding:10px 12px;min-height:44px;align-items:center}
 .login:hover{color:var(--cobalt)}
-.sound-btn{display:inline-flex;align-items:center;gap:.45rem;min-height:44px;padding:.4rem .8rem;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--navy);font:700 14px var(--body);cursor:pointer;transition:background .2s,border-color .2s}
-.sound-btn:hover{border-color:var(--cobalt);color:var(--cobalt)}
-.sound-btn svg{width:20px;height:20px;flex:none}
-.sound-btn .on{display:none}
-.sound-btn[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
-.sound-btn[aria-pressed="true"] .on{display:block}
-.sound-btn[aria-pressed="true"] .off{display:none}
-.sound-btn .bars{display:none;gap:2px;align-items:flex-end;height:14px}
-.sound-btn[aria-pressed="true"] .bars{display:inline-flex}
 .bars i{width:3px;background:var(--mint);border-radius:2px;height:40%;animation:eq 1s ease-in-out infinite}
 .bars i:nth-child(2){animation-delay:-.3s}.bars i:nth-child(3){animation-delay:-.6s}
 @keyframes eq{50%{height:100%}}
-.sound-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 @media (max-width:559px){
  .bar{gap:.25rem .5rem}
  .logo img{width:120px;height:35px}
