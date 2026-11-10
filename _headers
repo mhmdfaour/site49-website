@@ -1,0 +1,16 @@
+# Cloudflare Pages response headers (GitHub Pages ignores the meaning of this file).
+# Syntax: https://developers.cloudflare.com/pages/configuration/headers/
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000
+  X-Frame-Options: DENY
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-Du+OJKJSbdUgz5nrHeWWINvez6XKDDU/tyj/5c2uvwo='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+
+# Keep the project\x27s pages.dev addresses out of search results.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex
