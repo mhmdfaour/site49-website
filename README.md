@@ -9,10 +9,10 @@ The offer is **WebStarter**: R49/month, R0 setup, four pages, hosting and a Site
 Pick a free port, then from this folder:
 
 ```bash
-python -m http.server 8080
+npx wrangler pages dev . --port 8080
 ```
 
-Open http://localhost:8080/. (Canonical and Open Graph URLs point at https://site49.co.za.)
+Open http://localhost:8080/. This runs the folder the way Cloudflare Pages serves it; a plain `python -m http.server` answers 404 for `/contact`, `/examples` and `/about` because the links have no `.html`. (Canonical and Open Graph URLs point at https://site49.co.za.)
 
 ## Contents
 
