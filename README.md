@@ -21,7 +21,7 @@ Open http://localhost:8080/. (Canonical and Open Graph URLs point at https://sit
 | `index.html` | Home: hero, How it works, Examples teaser, WebStarter plan, FAQs |
 | `examples.html` | Three fictional sample websites, labelled "not real clients" |
 | `contact.html` | WhatsApp, email, phone, location |
-| `portfolio.html`, `about.html` | Redirect stubs (meta refresh plus a link) to `examples.html` and `index.html`; not in the sitemap |
+| `portfolio.html`, `about.html` | Redirect stubs (meta refresh plus a link) to `examples` and the home page; not in the sitemap |
 | `assets/site.css` | All styling (colour tokens at the top: navy `#0b2145`, cobalt `#075bee`, ice `#eaf3ff`, WhatsApp green, mint/yellow accents). Wide layout up to 1480 px content, full-bleed sections, View Transitions between pages |
 | `assets/site.js` | Header state, scroll progress, reveal, parallax (`data-speed`), How-it-works stepper, domain typing, scene sound (`data-sound`) |
 | `assets/video/` | Welcome, tutorial and use-case videos (MP4 + poster + WebVTT captions); captions made by `tools/make-captions.js`. See `docs/ASSETS.md` |
@@ -40,9 +40,32 @@ Open http://localhost:8080/. (Canonical and Open Graph URLs point at https://sit
 - Sample sites stay labelled as fictional ("Sample concept, fictional business"). The owner asked (2026-11-08) for no "AI-generated artwork" captions.
 - Scene sound must stay off by default and only start after the visitor turns it on.
 
-## Publishing
+## Publishing and hosting
 
-Everything in this repo is served by GitHub Pages, so keep review screenshots out of it (PR images live on the `pr6-screens` branch).
+Keep review screenshots out of this repo (PR images live on the `pr6-screens` branch). Merging to `main` publishes.
 
+**Today (until the move is finished):** GitHub Pages serves `main`. `CNAME` and `.nojekyll` stay as they are for now.
 
-GitHub Pages serves `main`; merging to `main` publishes. Don't change `CNAME` or the Pages/DNS settings.
+**Cloudflare Pages (the move):** a Pages project connected to this repository, production branch `main`, no build command, output directory `/`. Every merge to `main` deploys; other branches get preview addresses. Cloudflare serves pages without `.html` (it answers `/contact.html` with a 308 redirect to `/contact`) and a folder's `index.html` at the folder address, so every internal link in the site is written without `.html` (`contact`, `./`, `demos/corner-chair/`). GitHub Pages serves those addresses too.
+
+- `404.html` is the "page not found" page (Cloudflare Pages uses it automatically).
+- `_headers` sets the security headers (nosniff, referrer policy, HSTS without `includeSubDomains` or `preload` because other names under the domain serve mail, `X-Frame-Options: DENY` because no page frames another, and a Content-Security-Policy). If a page gains an inline script, add its sha256 to `script-src` or move it to a file. `_headers` also sends `X-Robots-Tag: noindex` on the project's `pages.dev` addresses. GitHub Pages ignores this file.
+- The headers have no caching rules; asset links carry `?v=` versions but file names are not versioned.
+
+### DNS records before the move (for going back)
+
+The zone `site49.co.za` is on Cloudflare DNS (name servers `etienne.ns.cloudflare.com`, `gloria.ns.cloudflare.com`). Read from public DNS on 2026-11-10:
+
+| Name | Type | Value |
+| --- | --- | --- |
+| `site49.co.za` | A | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
+| `site49.co.za` | AAAA | `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153` |
+| `www.site49.co.za` | CNAME | `mhmdfaour.github.io` |
+
+(These are GitHub Pages' standard addresses.) Public DNS does not show the proxy setting or TTL of each record; check the Cloudflare DNS page before changing them.
+
+### Going back to GitHub Pages
+
+1. In Cloudflare DNS, remove the records the Pages custom domains added for `site49.co.za` and `www`, and restore the three records above.
+2. In the GitHub repository settings, Pages: source `main`, custom domain `site49.co.za`, "Enforce HTTPS" on. Keep `CNAME` and `.nojekyll` in the repo.
+3. Wait for the certificate, then check https://site49.co.za/ and https://www.site49.co.za/. The clean addresses work on GitHub Pages as well, so no file change is needed.
