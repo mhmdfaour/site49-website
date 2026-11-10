@@ -8,7 +8,7 @@
   X-Frame-Options: DENY
   Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-Du+OJKJSbdUgz5nrHeWWINvez6XKDDU/tyj/5c2uvwo='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
 
-# Keep the project\x27s pages.dev addresses out of search results.
+# Keep the project's pages.dev addresses out of search results.
 https://:project.pages.dev/*
   X-Robots-Tag: noindex
 
