@@ -1,6 +1,6 @@
 # Site49 marketing website
 
-Static, buildless site for https://site49.co.za, served by GitHub Pages from `main` (`CNAME` and `.nojekyll` stay as they are). Plain HTML, one shared stylesheet, system fonts, local assets. One small self-hosted script (`assets/site.js`, no trackers) adds scroll reveal, parallax, the How-it-works stepper and the optional scene sound; everything works without it, and all motion is off when the visitor prefers reduced motion.
+Static, buildless site for https://site49.co.za, served by GitHub Pages from `main` (`CNAME` and `.nojekyll` stay as they are). Plain HTML, one shared stylesheet, system fonts, local assets. One small self-hosted script (`assets/site.js`, no trackers; it counts visits and clicks on Create account, Log in and WhatsApp without cookies or storage, sending them to the Site49 portal) adds scroll reveal, parallax, the How-it-works stepper and the optional scene sound; everything works without it, and all motion is off when the visitor prefers reduced motion.
 
 The offer is **WebStarter**: R49/month, R0 setup, four pages, hosting and a Site49 subdomain included. Sign-up and log-in buttons go to the customer portal at https://app.site49.co.za (`/signup`, `/login`); WhatsApp is the secondary help channel.
 
