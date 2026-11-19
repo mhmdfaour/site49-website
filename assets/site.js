@@ -1,5 +1,37 @@
 // Site49: scroll effects, parallax and the How-it-works stepper.
-// Self-hosted, no trackers. Motion is skipped when the visitor prefers reduced motion.
+// Self-hosted, no trackers. Counts visits without cookies (see "visit counting" below). Motion is skipped when the visitor prefers reduced motion.
+(() => {
+  /* ---------- visit counting: no cookie, no storage; sends only when the page carries the s49-stats meta tag ---------- */
+  try {
+    const meta = document.querySelector('meta[name="s49-stats"]');
+    const endpoint = meta && meta.content;
+    const host = location.hostname.toLowerCase();
+    const live = (location.protocol === 'https:' && (host === 'site49.co.za' || host === 'www.site49.co.za')) || (location.protocol === 'http:' && host === 'localhost');
+    if (endpoint && live && !navigator.webdriver) {
+      const send = body => {
+        try {
+          const data = JSON.stringify(body);
+          if (navigator.sendBeacon && navigator.sendBeacon(endpoint, new Blob([data], { type: 'text/plain' }))) return;
+          fetch(endpoint, { method: 'POST', body: data, keepalive: true, mode: 'no-cors', credentials: 'omit' }).catch(() => {});
+        } catch { /* counting never affects the page */ }
+      };
+      const nav = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+      if (!document.prerendering && !(nav && nav.type === 'back_forward')) {
+        let ref = '';
+        try { ref = new URL(document.referrer).hostname.toLowerCase().replace(/^www\./, ''); } catch { /* no referrer */ }
+        send({ k: 'view', p: location.pathname, r: ref });
+      }
+      const buttons = [['https://app.site49.co.za/signup', 'signup'], ['https://app.site49.co.za/login', 'login'], ['https://wa.me/', 'whatsapp']];
+      document.addEventListener('click', e => {
+        const a = e.target && e.target.closest && e.target.closest('a[href]');
+        const hit = a && buttons.find(b => a.href.startsWith(b[0]));
+        if (hit) send({ k: 'click', p: location.pathname, r: '', b: hit[1] });
+      });
+    }
+  } catch { /* counting never affects the page */ }
+
+})();
+
 (() => {
   const doc = document.documentElement;
   const motionQ = matchMedia('(prefers-reduced-motion: no-preference)');
